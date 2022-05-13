@@ -1,0 +1,32 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CreatorStickerBot/backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CreatorStickerBot/backend/issues"
+  },
+  "homepage": "https://github.com/CreatorStickerBot/backend#readme",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.17.3",
+    "form-data": "^4.0.0",
+    "mongoose": "^6.3.0",
+    "multiparty": "^4.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.25"
+  }
+}

@@ -1,0 +1,8 @@
+# Remove comments and remove from filename .example
+# example data:
+[
+  00000000, // telegramId user
+  00000001,
+  00000002,
+  ...
+]
