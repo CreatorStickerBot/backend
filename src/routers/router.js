@@ -13,6 +13,7 @@ router.all('/check-life', (_, res) => {
       res.send('ok')
     })
     .catch(() => {
+      console.error('BotApi service is unavailable')
       res.sendStatus(400)
     })
 })
@@ -187,9 +188,10 @@ router.get('/sticker-sets/:stickerSetId/stickers', protectionMiddleware, async (
     const responseStickers = await botApi.getStickers(stickerSet.title, accessToken)
     res.json(responseStickers.data)
   } catch (e) {
-    console.log(e)
+    console.error(JSON.stringify(e))
+
     res.status(400)
-    res.json(e.response.data)
+    res.json(e)
   }
 })
 

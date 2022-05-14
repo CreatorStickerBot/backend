@@ -55,8 +55,6 @@ authRouter.post('/registration', async (req, res) => {
 authRouter.post('/auth', async (req, res) => {
   const { username, password } = req.body
 
-  console.log(username, password)
-
   if (!username || !password) {
     res.status(400)
     res.json({ error: 'Bad request. One of the fields incorrect' })

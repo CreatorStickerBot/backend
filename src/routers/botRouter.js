@@ -53,7 +53,7 @@ botRouter.post('/confirmation-actions', async (req, res) => {
   try {
     users = JSON.parse(readFileSync(jsonFileUsersPath, 'utf-8'))
   } catch (e) {
-    console.log(e)
+    console.error(JSON.stringify(e))
   }
 
   if (!users.includes(ADMINISTRATOR_TG))
