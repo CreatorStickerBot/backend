@@ -55,7 +55,7 @@ jobs:
           CR_REPOSITORY=$CR_REPOSITORY \
           IMAGE_TAG=$IMAGE_TAG \
           GITHUB_RUN_NUMBER=$GITHUB_RUN_NUMBER \
-          PORT=${{ secrets.BACKEND_PORT }}
+          PORT=${{ secrets.BACKEND_PORT }} \
           'bash -s -e' < .github/workflows/scripts/deploy-ssh.sh
         
         exit_code=$?
