@@ -23,6 +23,7 @@ jobs:
         run: |
           docker build -t cr.yandex/$CR_REGISTRY/$CR_REPOSITORY:$IMAGE_TAG \
             --build-arg BACKEND_PORT="${{ secrets.BACKEND_PORT }}" \
+            --build-arg BOT_PORT="${{ secrets.BOT_PORT }}" \
             --build-arg VM_HOST="${{ secrets.VM_HOST }}" \
             --build-arg APP_SECRET="${{ secrets.APP_SECRET }}" \
             --build-arg EXPIRES_ACCESS_TOKEN="${{ secrets.EXPIRES_ACCESS_TOKEN }}" \

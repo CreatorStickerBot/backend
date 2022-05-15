@@ -1,7 +1,8 @@
 const axios = require('axios')
+const {VM_HOST, BOT_PORT} = require('../../config/config')
 
 const bot = axios.create({
-  baseURL: 'http://127.0.0.1:3000/bot-api'
+  baseURL: `http://${VM_HOST}:${BOT_PORT}/bot-api`
 })
 
 const botApi = {
