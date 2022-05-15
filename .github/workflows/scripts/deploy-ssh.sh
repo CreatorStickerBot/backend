@@ -15,7 +15,7 @@ if [[ -n $containerIds ]] ; then
   echo -e [] Delete containers ${RED}$(sudo docker stop $containerIds)
 fi
 
-echo -e [] Run ${GREEN}cr.yandex/$CR_REGISTRY/$CR_REPOSITORY:$IMAGE_TAG ${NC}WITH NAME ${GREEN}Frontend.$GITHUB_RUN_NUMBER
+echo -e [] Run ${GREEN}cr.yandex/$CR_REGISTRY/$CR_REPOSITORY:$IMAGE_TAG ${NC}WITH NAME ${GREEN}Backend.$GITHUB_RUN_NUMBER
 sudo docker run --name Backend.$GITHUB_RUN_NUMBER -d -p $PORT:$PORT cr.yandex/$CR_REGISTRY/$CR_REPOSITORY:$IMAGE_TAG
 
 sudo docker system prune -a -f
