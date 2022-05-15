@@ -22,18 +22,18 @@ jobs:
           IMAGE_TAG: ${{ github.sha }}
         run: |
           docker build -t cr.yandex/$CR_REGISTRY/$CR_REPOSITORY:$IMAGE_TAG \
-            --build-arg BACKEND_PORT=${{ secrets.BACKEND_PORT }} \
-            --build-arg VM_HOST=${{ secrets.VM_HOST }} \
-            --build-arg APP_SECRET=${{ secrets.APP_SECRET }} \
-            --build-arg EXPIRES_ACCESS_TOKEN=${{ secrets.EXPIRES_ACCESS_TOKEN }} \
-            --build-arg EXPIRES_REFRESH_TOKEN=${{ secrets.EXPIRES_REFRESH_TOKEN }} \
-            --build-arg MONGO_USER=${{ secrets.MONGO_USER }} \
-            --build-arg MONGO_PASS=${{ secrets.MONGO_PASS }} \
-            --build-arg MONGO_DB_NAME=${{ secrets.MONGO_DB_NAME }} \
-            --build-arg MONGO_DB_HOST=${{ secrets.MONGO_DB_HOST }} \
-            --build-arg MONGO_DB_PORT=${{ secrets.MONGO_DB_PORT }} \
-            --build-arg ADMINISTRATOR_TG=${{ secrets.ADMINISTRATOR_TG }} \
-            --build-arg AVAILABLE_TESTERS=${{ secrets.AVAILABLE_TESTERS }} \
+            --build-arg BACKEND_PORT="${{ secrets.BACKEND_PORT }}" \
+            --build-arg VM_HOST="${{ secrets.VM_HOST }}" \
+            --build-arg APP_SECRET="${{ secrets.APP_SECRET }}" \
+            --build-arg EXPIRES_ACCESS_TOKEN="${{ secrets.EXPIRES_ACCESS_TOKEN }}" \
+            --build-arg EXPIRES_REFRESH_TOKEN="${{ secrets.EXPIRES_REFRESH_TOKEN }}" \
+            --build-arg MONGO_USER="${{ secrets.MONGO_USER }}" \
+            --build-arg MONGO_PASS="${{ secrets.MONGO_PASS }}" \
+            --build-arg MONGO_DB_NAME="${{ secrets.MONGO_DB_NAME }}" \
+            --build-arg MONGO_DB_HOST="${{ secrets.MONGO_DB_HOST }}" \
+            --build-arg MONGO_DB_PORT="${{ secrets.MONGO_DB_PORT }}" \
+            --build-arg ADMINISTRATOR_TG="${{ secrets.ADMINISTRATOR_TG }}" \
+            --build-arg AVAILABLE_TESTERS="${{ secrets.AVAILABLE_TESTERS }}" \
             --build-arg BUILD_NUM=$GITHUB_RUN_NUMBER \
             .
           docker push cr.yandex/$CR_REGISTRY/$CR_REPOSITORY:$IMAGE_TAG
