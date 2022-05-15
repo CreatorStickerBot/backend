@@ -6,6 +6,7 @@ const bot = axios.create({
 })
 
 const botApi = {
+  bot,
   getProfilePhotos (telegramId, token) {
     return new Promise((resolve, reject) => {
       bot.get(`/profile-photo/${telegramId}`, {
