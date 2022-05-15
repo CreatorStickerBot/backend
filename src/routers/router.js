@@ -44,7 +44,7 @@ router.get('/profile', protectionMiddleware, (req, res) => {
 })
 
 router.post('/upload-image', protectionMiddleware, (req, res) => {
-  res.redirect(307, `${botApi.bot.defaults.baseUrl}/uploadStickerImage/${req.user.telegramId}`)
+  res.redirect(307, `${botApi.bot.defaults.baseURL}/uploadStickerImage/${req.user.telegramId}`)
 })
 
 /**
