@@ -3,7 +3,7 @@ const {MONGO_USER, MONGO_PASS, MONGO_DB_NAME, MONGO_DB_HOST, MONGO_DB_PORT} = re
 
 async function connection () {
   try {
-    await mongoose.connect(`mongodb://MongoDB1:${MONGO_DB_PORT}`, {
+    await mongoose.connect(`mongodb://${MONGO_DB_HOST}:${MONGO_DB_PORT}`, {
       bufferCommands: false,
       auth: {
         username: MONGO_USER,
